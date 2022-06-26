@@ -5,6 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { SharedModule } from './shared/shared.module';
+import { AdminModule } from './admin/admin.module';
+import { UserModule } from './user/user.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -12,7 +16,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule,
+    AdminModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
