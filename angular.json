@@ -24,7 +24,8 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/goku.png",
+              "src/assets/goku.png",
+              "src/assets/goku-256.png",
               "src/assets"
             ],
             "styles": [
@@ -92,7 +93,8 @@
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/goku.png",
+              "src/assets/goku.png",
+              "src/assets/goku-256.png",
               "src/assets"
             ],
             "styles": [
