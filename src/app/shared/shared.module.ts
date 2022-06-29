@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { NavlinkComponent } from './navlink/navlink.component';
 
 
 
@@ -10,7 +11,8 @@ import { HeaderComponent } from './header/header.component';
   declarations: [
     NavbarComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    NavlinkComponent
   ],
   imports: [
     CommonModule
