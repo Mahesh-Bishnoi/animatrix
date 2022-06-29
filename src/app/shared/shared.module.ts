@@ -5,20 +5,32 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { NavlinkComponent } from './navlink/navlink.component';
 
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     NavbarComponent,
     FooterComponent,
     HeaderComponent,
-    NavlinkComponent
+    NavlinkComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule
   ],
   exports: [
-    NavbarComponent
-  ]
+    NavbarComponent,
+    FooterComponent,
+    HeaderComponent,
+    NavlinkComponent,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}
