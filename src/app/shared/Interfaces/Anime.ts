@@ -4,7 +4,7 @@ export interface Anime {
   title: String;
   description?: String;
   imdbRating?: Number;
-  genre?: String;
+  genre?: String[];
   language?: String;
   image?: String;
 }

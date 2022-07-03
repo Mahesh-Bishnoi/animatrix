@@ -12,4 +12,7 @@ export class AnimeService {
   public getAnimes(): Observable<Anime[]> {
     return this.httpClient.get<Anime[]>('/api/animes');
   }
+  public getGenres(): Observable<String[]> {
+    return this.httpClient.get<String[]>('/api/genres');
+  }
 }

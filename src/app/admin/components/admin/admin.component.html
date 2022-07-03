@@ -1,1 +1,66 @@
-<p>admin works!</p>
+<div class="admin-anime-form">
+  <mat-card class="admin-anime-form-card">
+    <form [formGroup]="animeForm" (ngSubmit)="onAddAnime()">
+      <mat-form-field
+        appearance="fill"
+        color="primary"
+        class="admin-form-field"
+      >
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" required />
+        <mat-error *ngIf="name.invalid">{{ getErrorMessage() }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="admin-form-field">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title" required />
+        <mat-error *ngIf="title.invalid">{{ getErrorMessage() }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="admin-form-field">
+        <mat-label>Description</mat-label>
+        <input matInput formControlName="description" required />
+        <mat-error *ngIf="description.invalid">{{
+          getErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="admin-form-field">
+        <mat-label>Imdb rating</mat-label>
+        <mat-select formControlName="imdbRating" required>
+          <mat-option
+            *ngFor="let number of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+            value="{{ number }}"
+            >{{ number }}</mat-option
+          >
+        </mat-select>
+        <mat-error *ngIf="imdbRating.invalid">{{
+          getErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="admin-form-field">
+        <mat-label>Genre</mat-label>
+        <mat-select formControlName="genre" required multiple>
+          <mat-option *ngFor="let genre of genres" value="{{ genre }}">{{
+            genre
+          }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="genre.invalid">{{ getErrorMessage() }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="admin-form-field">
+        <mat-label>Language</mat-label>
+        <mat-select formControlName="language" required>
+          <mat-option value="English">English</mat-option>
+          <mat-option value="Japanese">Japanese</mat-option>
+        </mat-select>
+        <mat-error *ngIf="language.invalid">{{ getErrorMessage() }}</mat-error>
+      </mat-form-field>
+      <button
+        class="admin-anime-add-button"
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!animeForm.valid"
+      >
+        Add
+      </button>
+    </form>
+  </mat-card>
+</div>

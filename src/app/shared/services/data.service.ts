@@ -16,8 +16,8 @@ export class DataService implements InMemoryDbService {
         name: 'Anime1',
         title: 'Title1',
         description: 'Anime1 description',
-        genre: 'Genre1',
-        image: 'image1',
+        genre: ['Comedy'],
+        image: 'assets/image1',
         imdbRating: 5,
         language: 'English',
       },
@@ -26,8 +26,8 @@ export class DataService implements InMemoryDbService {
         name: 'Anime2',
         title: 'Title2',
         description: 'Anime2 description',
-        genre: 'Genre2',
-        image: 'image2',
+        genre: ['Adventure'],
+        image: 'assets/image2',
         imdbRating: 7,
         language: 'English',
       },
@@ -36,8 +36,8 @@ export class DataService implements InMemoryDbService {
         name: 'Anime3',
         title: 'Title3',
         description: 'Anime3 description',
-        genre: 'Genre3',
-        image: 'image3',
+        genre: ['Adventure'],
+        image: 'assets/image3',
         imdbRating: 8,
         language: 'English',
       },
@@ -46,12 +46,13 @@ export class DataService implements InMemoryDbService {
         name: 'Anime4',
         title: 'Title4',
         description: 'Anime4 description',
-        genre: 'Genre1',
-        image: 'image4',
+        genre: ['Action'],
+        image: 'assets/image4',
         imdbRating: 9,
         language: 'English',
       },
     ];
+
     let users: User[] = [
       {
         id: 1,
@@ -61,9 +62,18 @@ export class DataService implements InMemoryDbService {
       {
         id: 2,
         name: 'User2',
-        password: 'password2'
+        password: 'password2',
       },
     ];
-    return { animes, users };
+
+    let genres: String[] = [
+      'Action',
+      'Adventure',
+      'Comedy',
+      'Romance',
+      'Shonen',
+      'Thriller',
+    ];
+    return { animes, users, genres };
   }
 }
