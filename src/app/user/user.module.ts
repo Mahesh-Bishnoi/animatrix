@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchComponent } from './components/search/search.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
-  declarations: [SearchComponent],
+  declarations: [SearchComponent, LoginComponent, RegisterComponent],
   imports: [CommonModule],
   exports: [SearchComponent],
 })
