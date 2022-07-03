@@ -8,6 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { AdminModule } from './admin/admin.module';
 import { UserModule } from './user/user.module';
+import { UserRoutingModule } from './user/user-routing.module';
+import { SharedRoutingModule } from './shared/shared-routing.module';
+import { AdminRoutingModule } from './admin/admin-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,9 @@ import { UserModule } from './user/user.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    UserRoutingModule,
+    SharedRoutingModule,
+    AdminRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
     AdminModule,

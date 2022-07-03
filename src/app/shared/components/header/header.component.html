@@ -1,8 +1,11 @@
 <mat-toolbar color="primary" class="header">
-  <img
-    class="header-icon-image"
-    src="../assets/goku-256.png"
-    alt="App icon goku"
-  />
+  <a routerLink="/">
+    <img
+      class="header-icon-image"
+      src="../assets/goku-256.png"
+      alt="App icon goku"
+    />
+  </a>
   <h1 class="header-title">{{ title }}</h1>
+  <ng-content></ng-content>
 </mat-toolbar>

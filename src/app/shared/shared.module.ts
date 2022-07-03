@@ -15,6 +15,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataService } from './services/data.service';
+import { SharedRoutingModule } from './shared-routing.module';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { DataService } from './services/data.service';
   ],
   imports: [
     CommonModule,
+    SharedRoutingModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
