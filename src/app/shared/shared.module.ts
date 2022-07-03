@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
-import { NavlinkComponent } from './navlink/navlink.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { NavlinkComponent } from './components/navlink/navlink.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -11,6 +11,11 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
+
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { DataService } from './services/data.service';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +32,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatIconModule,
     MatButtonModule,
     MatTabsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(DataService, { delay: 100 })
   ],
   exports: [
     NavbarComponent,
