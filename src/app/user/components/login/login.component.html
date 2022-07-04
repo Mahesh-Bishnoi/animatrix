@@ -1,1 +1,38 @@
-<a routerLink="/register">Register</a>
+<div class="login-register-form">
+  <mat-card class="login-register-form-card">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <mat-form-field
+        appearance="fill"
+        color="primary"
+        class="login-register-form-field"
+      >
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required />
+        <mat-error *ngIf="email.invalid">{{ getErrorMessage('email') }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="login-register-form-field">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="password.invalid">{{ getErrorMessage('password') }}</mat-error>
+      </mat-form-field>
+      <button
+        class="login-register-form-button"
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!loginForm.valid"
+      >
+        Login
+      </button>
+    </form>
+    <br>
+    <a class="login-register-form-button" color="primary" mat-raised-button routerLink="/register">Register</a>
+  </mat-card>
+</div>
+>
