@@ -57,14 +57,12 @@ export class DataService implements InMemoryDbService {
       {
         id: 1,
         name: 'User1',
-        username: 'username1',
         email: 'user1@somesite.com',
         password: 'password1',
       },
       {
         id: 2,
         name: 'User2',
-        username: 'username2',
         email: 'user2@somesite.com',
         password: 'password2',
       },

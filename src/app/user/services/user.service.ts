@@ -12,4 +12,7 @@ export class UserService {
   public getUsers(): Observable<User[]> {
     return this.httpClient.get<User[]>('/api/users');
   }
+  public addUser(user:User): Observable<User> {
+    return this.httpClient.post<User>('/api/users',user);
+  }
 }
