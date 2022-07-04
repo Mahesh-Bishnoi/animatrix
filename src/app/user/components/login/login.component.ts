@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  FormBuilder,
   FormControl,
   FormGroup,
   Validators,
@@ -19,7 +18,6 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private formBuilder: FormBuilder
   ) {}
 
   ngOnInit(): void {
