@@ -1,11 +1,22 @@
 <mat-toolbar color="primary" class="header">
-  <a routerLink="/">
+  <a routerLink="/" class="header-home-link" (click)="onHomeClick()">
     <img
       class="header-icon-image"
       src="../assets/goku-256.png"
       alt="App icon goku"
     />
-  </a>
   <h1 class="header-title">{{ title }}</h1>
-  <ng-content></ng-content>
+</a>
+<nav mat-tab-nav-bar backgroundColor="primary" id="mat-tab-nav-bar">
+  <a
+    mat-tab-link
+    *ngFor="let link of navLinks"
+    routerLink="{{ '/' + link.path }}"
+    routerLinkActive
+    #rla="routerLinkActive"
+    [active]="rla.isActive"
+  >
+    {{ link.label }}
+  </a>
+</nav>
 </mat-toolbar>

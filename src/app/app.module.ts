@@ -11,11 +11,10 @@ import { UserModule } from './user/user.module';
 import { UserRoutingModule } from './user/user-routing.module';
 import { SharedRoutingModule } from './shared/shared-routing.module';
 import { AdminRoutingModule } from './admin/admin-routing.module';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,9 +24,10 @@ import { AdminRoutingModule } from './admin/admin-routing.module';
     BrowserAnimationsModule,
     SharedModule,
     AdminModule,
-    UserModule
+    UserModule,
+    MatTabsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -4,7 +4,13 @@
 }
 .header{
     background: linear-gradient(145deg,#0d47a1,#1976d2);
+    justify-content: space-between;
 }
 .header-title{
-    padding: 0px 10px;
+    padding: 10px;
+}
+.header-home-link{
+    display: flex;
+    text-decoration: none;
+    color: white;
 }
