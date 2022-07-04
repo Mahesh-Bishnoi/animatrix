@@ -45,30 +45,30 @@ export class LoginComponent implements OnInit {
   }
 
   public onLogin() {
-    this.userService.getUsers().subscribe((users: User[]) => {
-      let emailMatched: boolean = false;
-      let passwordMatched: boolean = false;
-      let email: String = this.loginForm.get('email')?.value;
-      let password: String = this.loginForm.get('password')?.value;
-      users.forEach((user) => {
-        if (user.email === email) {
-          emailMatched = true;
-          if (user.password === password) {
-            passwordMatched = true;
+    if (this.loginForm.valid) {
+      this.userService.getUsers().subscribe((users: User[]) => {
+        let emailMatched: boolean = false;
+        let passwordMatched: boolean = false;
+        let email: String = this.loginForm.get('email')?.value;
+        let password: String = this.loginForm.get('password')?.value;
+        users.forEach((user) => {
+          if (user.email === email) {
+            emailMatched = true;
+            if (user.password === password) {
+              passwordMatched = true;
+            }
           }
+        });
+        if (emailMatched) {
+          if (passwordMatched) {
+            alert('Login Successful!');
+          } else {
+            alert('Incorrect password!');
+          }
+        } else {
+          alert('User not found!');
         }
       });
-      if(emailMatched){
-        if(passwordMatched){
-          alert("Login Successful!");
-        }
-        else{
-          alert("Incorrect password!");
-        }
-      }
-      else{
-        alert("User not found!");
-      }
-    });
+    }
   }
 }
