@@ -1,8 +1,7 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
-@use './palette' as plt;
+@use "@angular/material" as mat;
+@use "./palette" as plt;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -14,20 +13,27 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $animatrix-primary: mat.define-palette(plt.$animatrix-pallete-blue);
-$animatrix-accent: mat.define-palette(plt.$animatrix-pallete-blue, A200, A100, A400);
+$animatrix-accent: mat.define-palette(
+  plt.$animatrix-pallete-blue,
+  A200,
+  A100,
+  A400
+);
 
 // The warn palette is optional (defaults to red).
 $animatrix-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$animatrix-theme: mat.define-light-theme((
-  color: (
-    primary: $animatrix-primary,
-    accent: $animatrix-accent,
-    warn: $animatrix-warn,
+$animatrix-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $animatrix-primary,
+      accent: $animatrix-accent,
+      warn: $animatrix-warn,
+    ),
   )
-));
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -36,8 +42,30 @@ $animatrix-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #303030;}
-#mat-tab-nav-bar > .mat-tab-link-container{
+html,
+body {
+  height: 100vh;
+  min-height: 100vh;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #303030;
+}
+#mat-tab-nav-bar > .mat-tab-link-container {
   background-color: transparent !important;
+}
+#mat-tab-nav-bar
+  > .mat-tab-link-container
+  > .mat-tab-list
+  > .mat-tab-links
+  > a:hover {
+  background-color: #0d47a1;
+}
+.max-height-flex {
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

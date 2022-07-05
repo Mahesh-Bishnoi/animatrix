@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title: String = 'Animatrix';
   navLinks = [
-    { path: 'admin', label: 'Admin' },
     { path: 'login', label: 'Login' },
+    { path: 'admin', label: 'Admin' },
   ];
 }

@@ -1,0 +1,20 @@
+.footer {
+  height: 64px;
+  background: linear-gradient(225deg, #0d47a1, #1976d2);
+  display: flex;
+  justify-content: center;
+}
+.footer-link {
+  color: #fff;
+  padding: 20px;
+  font-size: 24px;
+}
+.footer-link > a {
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  color: white;
+}

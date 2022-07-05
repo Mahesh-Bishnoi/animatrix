@@ -1,4 +1,9 @@
-<app-header title="{{ title }}" [navLinks]="navLinks"> </app-header>
-<mat-tab-nav-panel>
+<header>
+  <app-header title="{{ title }}" [navLinks]="navLinks"></app-header>
+</header>
+<main>
+  <mat-tab-nav-panel>
     <router-outlet></router-outlet>
-</mat-tab-nav-panel>
+  </mat-tab-nav-panel>
+</main>
+<footer><app-footer></app-footer></footer>
