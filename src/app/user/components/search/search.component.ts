@@ -24,22 +24,22 @@ export class SearchComponent implements OnInit {
     switch (this.searchBy) {
       case SearchByString.Name:
         searchedAnimes = this.allAnimes.filter((anime:Anime)=>{
-          return anime.name.includes(this.searchText.toString());
+          return anime.name.toLocaleLowerCase().includes(this.searchText.toString().toLocaleLowerCase());
         });
         break;
       case SearchByString.Title:
         searchedAnimes = this.allAnimes.filter((anime:Anime)=>{
-          return anime.title.includes(this.searchText.toString());
+          return anime.title.toLocaleLowerCase().includes(this.searchText.toString().toLocaleLowerCase());
         });
         break;
       case SearchByString.Description:
         searchedAnimes = this.allAnimes.filter((anime:Anime)=>{
-          return anime.description?.includes(this.searchText.toString());
+          return anime.description?.toLocaleLowerCase().includes(this.searchText.toString().toLocaleLowerCase());
         });
         break;
       default:
         searchedAnimes = this.allAnimes.filter((anime:Anime)=>{
-          return anime.name.includes(this.searchText.toString());
+          return anime.name.toLocaleLowerCase().includes(this.searchText.toString().toLocaleLowerCase());
         });
     }
     this.searchResult.emit(searchedAnimes);
