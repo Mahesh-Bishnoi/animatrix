@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MainViewComponent } from './user/components/main-view/main-view.component';
 
-const routes: Routes = [{ path: '', component: MainViewComponent }];
+const routes: Routes = [{ path: '',pathMatch: 'full', redirectTo:'animes'}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
