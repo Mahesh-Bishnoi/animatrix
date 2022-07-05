@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Anime } from 'src/app/shared/Interfaces/Anime';
 import { AnimeService } from 'src/app/shared/services/anime.service';
 
@@ -20,4 +20,8 @@ export class MainViewComponent implements OnInit {
     this.animes = this.animeService.getAnimes();
   }
 
+  onSearchResult(searchedAnimes:Anime[]){
+    console.log(searchedAnimes);
+    this.animes = of(searchedAnimes);
+  }
 }

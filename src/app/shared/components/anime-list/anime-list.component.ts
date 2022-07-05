@@ -1,15 +1,14 @@
 import { NumberInput } from '@angular/cdk/coercion';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, DoCheck, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Anime } from '../../Interfaces/Anime';
-import { AnimeService } from '../../services/anime.service';
 
 @Component({
   selector: 'app-anime-list',
   templateUrl: './anime-list.component.html',
   styleUrls: ['./anime-list.component.scss'],
 })
-export class AnimeListComponent implements OnInit {
+export class AnimeListComponent implements OnInit, DoCheck {
   @Input() animes!: Observable<Anime[]> ;
   animeByGenre: Anime [] = [];
   @Input() genre: String = '';
@@ -17,18 +16,11 @@ export class AnimeListComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.breakPoints();
-    if (this.genre === '' || this.genre === 'All') {
-      this.animes.subscribe((animes:Anime[])=>{
-        this.animeByGenre = animes;
-      });
-    } else {
-      this.animes.subscribe((animes:Anime[])=>{
-        this.animeByGenre = animes.filter((anime: Anime) => {
-          return anime.genre?.includes(this.genre);
-        });;
-      });
-    }
+    this.refresh();
+  }
+
+  ngDoCheck(): void {
+    //this.refresh();
   }
 
   public breakPoints() {
@@ -47,6 +39,20 @@ export class AnimeListComponent implements OnInit {
     }
   }
 
+  refresh(){
+    this.breakPoints();
+    if (this.genre === '' || this.genre === 'All') {
+      this.animes.subscribe((animes:Anime[])=>{
+        this.animeByGenre = animes;
+      });
+    } else {
+      this.animes.subscribe((animes:Anime[])=>{
+        this.animeByGenre = animes.filter((anime: Anime) => {
+          return anime.genre?.includes(this.genre);
+        });;
+      });
+    }
+  }
   onResize(event: any) {
     this.breakPoints();
   }
