@@ -15,4 +15,7 @@ export class AnimeService {
   public getGenres(): Observable<String[]> {
     return this.httpClient.get<String[]>('/api/genres');
   }
+  public getAnimeByID(id:Number): Observable<Anime>{
+    return this.httpClient.get<Anime>('/api/animes/'+id);
+  }
 }
