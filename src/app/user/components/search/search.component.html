@@ -1,5 +1,13 @@
 <div class="anime-search-container">
-  <mat-card class="anime-search">
+  <mat-card class="anime-search" fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap.lt-sm="24px">
+    <mat-form-field appearance="fill" class="anime-search-input">
+      <mat-label>Search By:</mat-label>
+      <mat-select value="Name">
+        <mat-option value="Name">Name</mat-option>
+        <mat-option value="Title">Title</mat-option>
+        <mat-option value="Description">Description</mat-option>
+      </mat-select>
+    </mat-form-field>
     <mat-form-field
       color="primary"
       appearance="fill"

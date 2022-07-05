@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AnimeService } from 'src/app/shared/services/anime.service';
 
 @Component({
   selector: 'app-main-view',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainViewComponent implements OnInit {
 
-  constructor() { }
+  genres!: Observable<String[]>;
+
+  constructor(private animeService: AnimeService) { }
 
   ngOnInit(): void {
+    this.genres = this.animeService.getGenres();
   }
 
 }
