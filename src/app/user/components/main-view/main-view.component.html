@@ -12,13 +12,13 @@
             <mat-tab-group mat-align-tabs="center" color="primary">
           <mat-tab label="All">
             <ng-template matTabContent>
-              <app-anime-list genre="All"></app-anime-list>
+              <app-anime-list genre="All" [animes]="animes"></app-anime-list>
             </ng-template>
           </mat-tab>
           <mat-tab *ngFor="let genre of genres | async">
             <ng-template mat-tab-label>{{ genre }}</ng-template>
             <ng-template matTabContent>
-              <app-anime-list genre="{{ genre }}"></app-anime-list>
+              <app-anime-list genre="{{ genre }}" [animes]="animes"></app-anime-list>
             </ng-template>
           </mat-tab>
         </mat-tab-group>

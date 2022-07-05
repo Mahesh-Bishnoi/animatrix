@@ -2,7 +2,7 @@
   <mat-card class="anime-search" fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap.lt-sm="24px">
     <mat-form-field appearance="fill" class="anime-search-input">
       <mat-label>Search By:</mat-label>
-      <mat-select value="Name">
+      <mat-select [(value)]="searchBy">
         <mat-option value="Name">Name</mat-option>
         <mat-option value="Title">Title</mat-option>
         <mat-option value="Description">Description</mat-option>
@@ -13,8 +13,8 @@
       appearance="fill"
       class="anime-search-input"
     >
-      <input matInput type="text" placeholder="Search" />
-      <button mat-button matSuffix mat-icon-button>
+      <input matInput type="text" placeholder="Search" [(ngModel)]="searchText" (input)="onSearch()"/>
+      <button mat-button matSuffix mat-icon-button (click)="onSearch()">
         <mat-icon>search</mat-icon>
       </button>
     </mat-form-field>

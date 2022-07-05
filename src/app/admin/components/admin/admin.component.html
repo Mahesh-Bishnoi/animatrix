@@ -1,6 +1,6 @@
 <div fxLayout="column" fxLayoutAlign="center center" class="admin-anime-form">
   <mat-card class="admin-anime-form-card">
-    <mat-card-header>
+    <mat-card-header fxLayoutAlign="center" fxLayout="row">
       <mat-card-title>Add Anime</mat-card-title>
     </mat-card-header>
     <form [formGroup]="animeForm" (ngSubmit)="onAddAnime()">

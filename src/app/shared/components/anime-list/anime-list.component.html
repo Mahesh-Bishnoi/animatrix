@@ -13,14 +13,14 @@
 <div
   fxLayout="row"
   fxLayoutAlign="space-evenly"
-  *ngIf="animes.length === 0"
+  *ngIf="animeByGenre.length === 0"
   class="anime-list"
 >
   No Anime found
 </div>
-<div class="anime-list" *ngIf="animes.length > 0">
+<div class="anime-list" *ngIf="animeByGenre.length > 0">
   <mat-grid-list [cols]="columns" rowHeight="200px" (window:resize)="onResize($event)">
-    <mat-grid-tile *ngFor="let anime of animes" colspan="1" rowspan="1">
+    <mat-grid-tile *ngFor="let anime of animeByGenre" colspan="1" rowspan="1">
       <app-anime-card [anime]="anime"></app-anime-card>
       <!-- <mat-grid-tile-header>Animes</mat-grid-tile-header>
       <mat-grid-tile-footer>Animes</mat-grid-tile-footer> -->

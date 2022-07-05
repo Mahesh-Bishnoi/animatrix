@@ -9,21 +9,10 @@ import { AnimeService } from '../../services/anime.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   @Input() title: String = 'Animatrix';
   @Input() navLinks= [{path:"/",label:"Home"}];
 
-  constructor(
-    private animeService: AnimeService,
-    private userService: UserService
-  ) {}
-  ngOnInit(): void {
-    this.animeService.getAnimes().subscribe((animes: Anime[]) => {
-      console.log(animes);
-    });
-    this.userService.getUsers().subscribe((users: User[]) => {
-      console.log(users);
-    });
-  }
+  constructor() {}
   public onHomeClick() {}
 }

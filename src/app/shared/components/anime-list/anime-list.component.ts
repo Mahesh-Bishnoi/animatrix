@@ -1,5 +1,6 @@
 import { NumberInput } from '@angular/cdk/coercion';
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Anime } from '../../Interfaces/Anime';
 import { AnimeService } from '../../services/anime.service';
 
@@ -9,22 +10,25 @@ import { AnimeService } from '../../services/anime.service';
   styleUrls: ['./anime-list.component.scss'],
 })
 export class AnimeListComponent implements OnInit {
-  animes: Anime[] = [];
+  @Input() animes!: Observable<Anime[]> ;
+  animeByGenre: Anime [] = [];
   @Input() genre: String = '';
-  @Input() columns: NumberInput = '8';
-  constructor(private animeService: AnimeService) {}
+  columns: NumberInput = '6';
+  constructor() {}
 
   ngOnInit(): void {
-    this.animeService.getAnimes().subscribe((animes: Anime[]) => {
-      if (this.genre === '' || this.genre === 'All') {
-        this.animes = animes;
-      } else {
-        this.animes = animes.filter((anime: Anime) => {
+    this.breakPoints();
+    if (this.genre === '' || this.genre === 'All') {
+      this.animes.subscribe((animes:Anime[])=>{
+        this.animeByGenre = animes;
+      });
+    } else {
+      this.animes.subscribe((animes:Anime[])=>{
+        this.animeByGenre = animes.filter((anime: Anime) => {
           return anime.genre?.includes(this.genre);
-        });
-      }
-      this.breakPoints();
-    });
+        });;
+      });
+    }
   }
 
   public breakPoints() {
