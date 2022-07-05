@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Anime } from 'src/app/shared/Interfaces/Anime';
 
 @Component({

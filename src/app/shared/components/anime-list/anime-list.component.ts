@@ -1,6 +1,5 @@
 import { NumberInput } from '@angular/cdk/coercion';
 import { Component, DoCheck, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Anime } from '../../Interfaces/Anime';
 
 @Component({

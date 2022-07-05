@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
 import { Anime } from 'src/app/shared/Interfaces/Anime';
 import { AnimeService } from 'src/app/shared/services/anime.service';
 
