@@ -14,6 +14,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainViewComponent } from './components/main-view/main-view.component';
 import { SharedModule } from '../shared/shared.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 @NgModule({
   declarations: [SearchComponent, LoginComponent, RegisterComponent, MainViewComponent],
   imports: [
@@ -29,6 +31,7 @@ import { SharedModule } from '../shared/shared.module';
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
   ],
   exports: [SearchComponent, LoginComponent, RegisterComponent],
 })

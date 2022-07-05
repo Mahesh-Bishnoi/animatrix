@@ -12,6 +12,7 @@ import { UserRoutingModule } from './user/user-routing.module';
 import { SharedRoutingModule } from './shared/shared-routing.module';
 import { AdminRoutingModule } from './admin/admin-routing.module';
 import { MatTabsModule } from '@angular/material/tabs';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,6 +27,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     AdminModule,
     UserModule,
     MatTabsModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

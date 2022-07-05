@@ -4,7 +4,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavlinkComponent } from './components/navlink/navlink.component';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -42,6 +42,7 @@ import { AnimeListComponent } from './components/anime-list/anime-list.component
     MatTabsModule,
     MatCardModule,
     MatDividerModule,
+    FlexLayoutModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(DataService, { delay: 100 }),
   ],
