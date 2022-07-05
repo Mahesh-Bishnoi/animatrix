@@ -16,9 +16,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainViewComponent } from './components/main-view/main-view.component';
 import { SharedModule } from '../shared/shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AnimeDetailsComponent } from './components/anime-details/anime-details.component';
 
 @NgModule({
-  declarations: [SearchComponent, LoginComponent, RegisterComponent, MainViewComponent],
+  declarations: [SearchComponent, LoginComponent, RegisterComponent, MainViewComponent, AnimeDetailsComponent],
   imports: [
     CommonModule,
     SharedModule,
