@@ -1,32 +1,40 @@
 <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="24px">
   <div fxLayout="row" fxLayoutAlign="center">
+    <ng-container *ngIf="animes">
     <app-search
       [animes]="animes"
       (searchResult)="onSearchResult($event)"
     ></app-search>
+  </ng-container>
   </div>
   <div fxLayout="row" fxLayoutAlign="center">
     <mat-card class="w-100">
       <mat-card-content>
-        <ng-container *ngIf="(genres | async) === null">
+        <ng-container *ngIf="(!genres)">
           <div fxLayout="row" fxLayoutAlign="space-evenly">Loading tabs...</div>
         </ng-container>
         <!-- <mat-tab-group mat-align-tabs="center" color="primary" dynamicHeight> -->
         <mat-tab-group mat-align-tabs="center" color="primary">
           <mat-tab label="All">
             <!-- <ng-template matTabContent> -->
+              <ng-container *ngIf="animes">
               <app-anime-list genre="All" [animes]="animes"></app-anime-list>
+              </ng-container>
             <!-- </ng-template> -->
           </mat-tab>
-          <mat-tab *ngFor="let genre of genres | async">
+          <ng-container *ngIf="genres">
+          <mat-tab *ngFor="let genre of genres">
             <ng-template mat-tab-label>{{ genre }}</ng-template>
             <!-- <ng-template matTabContent> -->
+              <ng-container *ngIf="animes">
               <app-anime-list
                 genre="{{ genre }}"
                 [animes]="animes"
               ></app-anime-list>
+            </ng-container>
             <!-- </ng-template> -->
           </mat-tab>
+        </ng-container>
         </mat-tab-group>
       </mat-card-content>
     </mat-card>

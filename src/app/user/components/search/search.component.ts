@@ -11,15 +11,13 @@ export class SearchComponent implements OnInit {
 
   searchBy: String = SearchByString.Name;
   searchText: String = '';
-  @Input() animes!: Observable<Anime[]> ;
+  @Input() animes!: Anime[] ;
   allAnimes: Anime[] = [];
   @Output() searchResult:EventEmitter<Anime[]> = new EventEmitter<Anime[]>();
   constructor() { }
 
   ngOnInit(): void {
-    this.animes.subscribe((animes:Anime[])=>{
-      this.allAnimes = animes;
-    });
+      this.allAnimes = this.animes;
   }
 
   public onSearch(){

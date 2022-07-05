@@ -10,18 +10,21 @@ import { AnimeService } from 'src/app/shared/services/anime.service';
 })
 export class MainViewComponent implements OnInit {
 
-  genres!: Observable<String[]>;
-  animes!: Observable<Anime[]>;
+  genres!: String[];
+  animes!: Anime[];
 
   constructor(private animeService: AnimeService) { }
 
   ngOnInit(): void {
-    this.genres = this.animeService.getGenres();
-    this.animes = this.animeService.getAnimes();
+    this.animeService.getGenres().subscribe((genres:String[])=>{
+      this.genres = genres;
+    });
+    this.animeService.getAnimes().subscribe((animes:Anime[])=>{
+      this.animes = animes;
+    });
   }
 
   onSearchResult(searchedAnimes:Anime[]){
-    console.log(searchedAnimes);
-    this.animes = of(searchedAnimes);
+    this.animes = searchedAnimes;
   }
 }

@@ -9,7 +9,7 @@ import { Anime } from '../../Interfaces/Anime';
   styleUrls: ['./anime-list.component.scss'],
 })
 export class AnimeListComponent implements OnInit, DoCheck {
-  @Input() animes!: Observable<Anime[]> ;
+  @Input() animes!: Anime[] ;
   animeByGenre: Anime [] = [];
   @Input() genre: String = '';
   columns: NumberInput = '6';
@@ -20,7 +20,7 @@ export class AnimeListComponent implements OnInit, DoCheck {
   }
 
   ngDoCheck(): void {
-    //this.refresh();
+    this.refresh();
   }
 
   public breakPoints() {
@@ -42,15 +42,11 @@ export class AnimeListComponent implements OnInit, DoCheck {
   refresh(){
     this.breakPoints();
     if (this.genre === '' || this.genre === 'All') {
-      this.animes.subscribe((animes:Anime[])=>{
-        this.animeByGenre = animes;
-      });
+      this.animeByGenre = this.animes;
     } else {
-      this.animes.subscribe((animes:Anime[])=>{
-        this.animeByGenre = animes.filter((anime: Anime) => {
-          return anime.genre?.includes(this.genre);
-        });;
-      });
+      this.animeByGenre = this.animes.filter((anime: Anime) => {
+        return anime.genre?.includes(this.genre);
+      });;
     }
   }
   onResize(event: any) {
