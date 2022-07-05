@@ -8,15 +8,18 @@ import { NavlinkComponent } from './components/navlink/navlink.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
-
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataService } from './services/data.service';
 import { SharedRoutingModule } from './shared-routing.module';
-
+import { AnimeCardComponent } from './components/anime-card/anime-card.component';
+import { AnimeListComponent } from './components/anime-list/anime-list.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,8 @@ import { SharedRoutingModule } from './shared-routing.module';
     FooterComponent,
     HeaderComponent,
     NavlinkComponent,
+    AnimeCardComponent,
+    AnimeListComponent,
   ],
   imports: [
     CommonModule,
@@ -31,17 +36,22 @@ import { SharedRoutingModule } from './shared-routing.module';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
+    MatGridListModule,
     MatIconModule,
     MatButtonModule,
     MatTabsModule,
+    MatCardModule,
+    MatDividerModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(DataService, { delay: 100 })
+    HttpClientInMemoryWebApiModule.forRoot(DataService, { delay: 100 }),
   ],
   exports: [
     NavbarComponent,
     FooterComponent,
     HeaderComponent,
     NavlinkComponent,
+    AnimeListComponent,
+    AnimeCardComponent,
   ],
 })
 export class SharedModule {}

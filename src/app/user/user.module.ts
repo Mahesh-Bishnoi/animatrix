@@ -10,18 +10,22 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { MainViewComponent } from './components/main-view/main-view.component';
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
-  declarations: [SearchComponent, LoginComponent, RegisterComponent],
+  declarations: [SearchComponent, LoginComponent, RegisterComponent, MainViewComponent],
   imports: [
     CommonModule,
+    SharedModule,
     UserRoutingModule,
     MatCardModule,
     MatButtonModule,
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
+    MatGridListModule,
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,

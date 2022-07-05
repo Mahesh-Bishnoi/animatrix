@@ -1,0 +1,20 @@
+<mat-card class="anime-card">
+  <mat-card-header>
+    <mat-card-title>{{ anime.name }}</mat-card-title>
+    <mat-card-subtitle>{{ anime.title }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{ anime.image }}" alt="{{ anime.name }}" class="anime-image"/>
+  <mat-card-content>
+    <p>
+      {{ anime.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button color="warn" mat-fab aria-label="Button with a heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button color="primary" mat-fab aria-label="Button with a heart icon">
+        <mat-icon>share</mat-icon>
+      </button>
+  </mat-card-actions>
+</mat-card>
