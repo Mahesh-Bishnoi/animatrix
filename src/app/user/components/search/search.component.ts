@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Anime } from 'src/app/shared/Interfaces/Anime';
+import { Anime } from '../../../shared/Interfaces/Anime';
 
 @Component({
   selector: 'app-search',

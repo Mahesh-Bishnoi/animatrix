@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Anime } from 'src/app/shared/Interfaces/Anime';
-import { AnimeService } from 'src/app/shared/services/anime.service';
+import { Anime } from '../../../shared/Interfaces/Anime';
+import { AnimeService } from '../../../shared/services/anime.service';
 
 @Component({
   selector: 'app-main-view',

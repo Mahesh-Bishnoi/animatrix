@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Anime } from 'src/app/shared/Interfaces/Anime';
-import { Review } from 'src/app/shared/Interfaces/Review';
+import { Anime } from '../../../shared/Interfaces/Anime';
 
 @Component({
   selector: 'app-reviews',

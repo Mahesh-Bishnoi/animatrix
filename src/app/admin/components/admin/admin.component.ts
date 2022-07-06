@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Anime } from 'src/app/shared/Interfaces/Anime';
-import { AnimeService } from 'src/app/shared/services/anime.service';
+import { Anime } from '../../../shared/Interfaces/Anime';
+import { AnimeService } from '../../../shared/services/anime.service';
 import { AdminService } from '../../services/admin.service';
 
 @Component({

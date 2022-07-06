@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router, UrlSegment } from '@angular/router';
-import { Anime } from 'src/app/shared/Interfaces/Anime';
-import { AnimeService } from 'src/app/shared/services/anime.service';
-import { AuthService } from 'src/app/shared/services/auth.service';
+import { Anime } from '../../../shared/Interfaces/Anime';
+import { AnimeService } from '../../../shared/services/anime.service';
+import { AuthService } from '../../../shared/services/auth.service';
 import { UserService } from '../../services/user.service';
 
 @Component({

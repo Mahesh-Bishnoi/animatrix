@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/shared/Interfaces/User';
+import { User } from '../../../shared/Interfaces/User';
 import { UserService } from '../../services/user.service';
 
 @Component({

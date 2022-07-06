@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Anime } from 'src/app/shared/Interfaces/Anime';
-import { Review } from 'src/app/shared/Interfaces/Review';
-import { AnimeService } from 'src/app/shared/services/anime.service';
+import { Anime } from '../../../shared/Interfaces/Anime';
+import { Review } from '../../../shared/Interfaces/Review';
+import { AnimeService } from '../../../shared/services/anime.service';
 import { AuthService } from '../../../shared/services/auth.service';
 
 @Component({
