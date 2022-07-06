@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
-import { Anime } from 'src/app/shared/Interfaces/Anime';
+import { Anime } from '../../shared/Interfaces/Anime';
 
 @Injectable({
   providedIn: 'root',
