@@ -17,9 +17,11 @@ import { MainViewComponent } from './components/main-view/main-view.component';
 import { SharedModule } from '../shared/shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AnimeDetailsComponent } from './components/anime-details/anime-details.component';
+import { ReviewsComponent } from './components/reviews/reviews.component';
+import { AddReviewComponent } from './components/add-review/add-review.component';
 
 @NgModule({
-  declarations: [SearchComponent, LoginComponent, RegisterComponent, MainViewComponent, AnimeDetailsComponent],
+  declarations: [SearchComponent, LoginComponent, RegisterComponent, MainViewComponent, AnimeDetailsComponent, ReviewsComponent, AddReviewComponent],
   imports: [
     CommonModule,
     SharedModule,
