@@ -21,7 +21,7 @@
     <button mat-raised-button color="primary" (click)="onWatch()">Watch</button>
   </mat-card-actions>
 </mat-card>
-<div fxLayout="column" fxLayoutAlign="space-evenly center" fxlayoutgap="24px">
+<div class="h-100" fxLayout="column" fxLayoutAlign="space-evenly center" fxlayoutgap="24px">
 <app-add-review [anime]="anime" (animeUpdate)="onAddReview($event)"></app-add-review>
 <ng-container *ngIf="(anime.reviews && anime.reviews.length>0)">
 <app-reviews [anime]="anime"></app-reviews>

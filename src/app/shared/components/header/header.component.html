@@ -8,6 +8,7 @@
     <h1 class="header-title">{{ title }}</h1>
   </a>
   <!-- <a routerLink="/account">Account</a> -->
+  <button mat-raised-button color="prinamry" (click)="onOptPrime()">Opt for prime</button>
   <ng-container *ngIf="isUserAuthenticated">
     <a routerLink="/">Account</a>
   </ng-container>

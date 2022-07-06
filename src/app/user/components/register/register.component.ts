@@ -65,6 +65,7 @@ export class RegisterComponent implements OnInit {
           watched:[],
           favourite:[],
           watchedLater:[],
+          primeUser:false,
         }
         this.userService.addUser(user).subscribe((addedUser:User)=>{
           console.log(addedUser);

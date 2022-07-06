@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { delay, Observable, of, tap } from 'rxjs';
@@ -8,7 +9,7 @@ import { User } from 'src/app/shared/Interfaces/User';
 })
 export class AuthService {
   user: User = { id: 0, name: '', email: '', password: '' };
-  constructor(private router: Router) {}
+  constructor(private router: Router,private httpClient: HttpClient) {}
 
   // store the URL so we can redirect after logging in
   redirectUrl: string | null = null;
@@ -26,6 +27,22 @@ export class AuthService {
     this.user = user;
     if (this.redirectUrl) {
       this.router.navigateByUrl(this.redirectUrl);
+    }
+  }
+
+  optPrimeForUser(){
+    if(this.isUserAuthenticated()){
+      if(this.user.primeUser){
+        alert("Already prime user!");
+      }else{
+        this.user.primeUser = true;
+        this.httpClient.put<User>('/api/users/'+this.user.id,this.user).subscribe(()=>{
+          alert("Prime membership activated!");
+        });
+      }
+    }
+    else{
+      this.router.navigateByUrl('/login');
     }
   }
 }

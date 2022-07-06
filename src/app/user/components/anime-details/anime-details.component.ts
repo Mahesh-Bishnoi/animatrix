@@ -28,10 +28,22 @@ export class AnimeDetailsComponent implements OnInit {
   }
   onBookmark(){
     if(this.authService.isUserAuthenticated()){
-      this.authService.getCurrentUser().watchedLater?.push(this.anime);
-      this.userService.updateUser(this.authService.getCurrentUser()).subscribe((user:any)=>{
-        console.log(user);
-      });
+      let alredyExists = false;
+      this.authService.getCurrentUser().watchedLater?.forEach((anime:Anime)=>{
+        if(anime.id===this.anime.id){
+          alredyExists = true;
+        }
+      })
+      if(!alredyExists){
+        this.authService.getCurrentUser().watchedLater?.push(this.anime);
+        this.userService.updateUser(this.authService.getCurrentUser()).subscribe((user:any)=>{
+          console.log(user);
+          alert("Added!");
+        });
+      }
+      else{
+        alert("Already added!");
+      }
     }
     else{
       this.router.navigateByUrl('/login');
@@ -39,10 +51,22 @@ export class AnimeDetailsComponent implements OnInit {
   }
   onFavourite(){
     if(this.authService.isUserAuthenticated()){
-      this.authService.getCurrentUser().favourite?.push(this.anime);
-      this.userService.updateUser(this.authService.getCurrentUser()).subscribe((user:any)=>{
-        console.log(user);
-      });
+      let alredyExists = false;
+      this.authService.getCurrentUser().favourite?.forEach((anime:Anime)=>{
+        if(anime.id===this.anime.id){
+          alredyExists = true;
+        }
+      })
+      if(!alredyExists){
+        this.authService.getCurrentUser().favourite?.push(this.anime);
+        this.userService.updateUser(this.authService.getCurrentUser()).subscribe((user:any)=>{
+          console.log(user);
+          alert("Added!");
+        });
+      }
+      else{
+        alert("Already added!");
+      }
     }
     else{
       this.router.navigateByUrl('/login');
@@ -50,10 +74,22 @@ export class AnimeDetailsComponent implements OnInit {
   }
   onWatch(){
     if(this.authService.isUserAuthenticated()){
-      this.authService.getCurrentUser().watched?.push(this.anime);
-      this.userService.updateUser(this.authService.getCurrentUser()).subscribe((user:any)=>{
-        console.log(user);
-      });
+      let alredyExists = false;
+      this.authService.getCurrentUser().watched?.forEach((anime:Anime)=>{
+        if(anime.id===this.anime.id){
+          alredyExists = true;
+        }
+      })
+      if(!alredyExists){
+        this.authService.getCurrentUser().watched?.push(this.anime);
+        this.userService.updateUser(this.authService.getCurrentUser()).subscribe((user:any)=>{
+          console.log(user);
+          alert("Added!");
+        });
+      }
+      else{
+        alert("Already added!");
+      }
     }
     else{
       this.router.navigateByUrl('/login');

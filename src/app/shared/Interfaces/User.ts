@@ -8,4 +8,5 @@ export interface User {
   watched?: Anime[];
   favourite?: Anime[];
   watchedLater?: Anime[];
+  primeUser?:boolean;
 }

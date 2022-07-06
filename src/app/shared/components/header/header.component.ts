@@ -1,4 +1,5 @@
 import { Component, DoCheck, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class HeaderComponent implements OnInit{
   @Input() title: String = 'Animatrix';
   @Input() navLinks= [{path:"/",label:"Home"}];
   @Input() isUserAuthenticated:boolean = false;
-  constructor(private authService:AuthService) {}
+  constructor(private authService:AuthService, private router:Router) {}
   ngOnInit(): void {
     console.log("Header onInit called!");
     console.log(this.navLinks);
@@ -27,4 +28,12 @@ export class HeaderComponent implements OnInit{
     }
   }
   public onHomeClick() {}
+  onOptPrime(){
+    if(this.authService.isUserAuthenticated()){
+      this.authService.optPrimeForUser();
+    }
+    else{
+      this.router.navigateByUrl('/login');
+    }
+  }
 }
