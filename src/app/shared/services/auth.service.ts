@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { delay, Observable, of, tap } from 'rxjs';
-import { User } from 'src/app/shared/Interfaces/User';
+import { User } from '../Interfaces/User';
+
 
 @Injectable({
   providedIn: 'root',
