@@ -19,9 +19,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AnimeDetailsComponent } from './components/anime-details/anime-details.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { AddReviewComponent } from './components/add-review/add-review.component';
+import { AccountComponent } from './components/account/account.component';
 
 @NgModule({
-  declarations: [SearchComponent, LoginComponent, RegisterComponent, MainViewComponent, AnimeDetailsComponent, ReviewsComponent, AddReviewComponent],
+  declarations: [SearchComponent, LoginComponent, RegisterComponent, MainViewComponent, AnimeDetailsComponent, ReviewsComponent, AddReviewComponent, AccountComponent],
   imports: [
     CommonModule,
     SharedModule,

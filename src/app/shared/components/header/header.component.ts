@@ -9,12 +9,13 @@ import { AuthService } from '../../services/auth.service';
 export class HeaderComponent implements OnInit{
   @Input() title: String = 'Animatrix';
   @Input() navLinks= [{path:"/",label:"Home"}];
-
+  @Input() isUserAuthenticated:boolean = false;
   constructor(private authService:AuthService) {}
   ngOnInit(): void {
     console.log("Header onInit called!");
     console.log(this.navLinks);
-    if(this.authService.isUserAuthenticated()){
+    this.isUserAuthenticated = this.authService.isUserAuthenticated();
+    if(this.isUserAuthenticated){
       this.navLinks.forEach((link, index)=>{
         if(link.path === 'login'){
           this.navLinks.splice(index,1);
