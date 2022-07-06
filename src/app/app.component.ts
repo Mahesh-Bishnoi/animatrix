@@ -10,6 +10,7 @@ export class AppComponent implements OnInit{
   title: String = 'Animatrix';
   isUserAuthenticated: boolean = false; 
   navLinks = [
+    { path: 'account', label: 'Account' },
     { path: 'animes', label: 'Animes' },
     { path: 'admin', label: 'Admin' },
   ];

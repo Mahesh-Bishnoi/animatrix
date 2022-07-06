@@ -62,6 +62,9 @@ export class RegisterComponent implements OnInit {
           name:this.registerForm.get('name')?.value,
           email:this.registerForm.get('email')?.value,
           password:this.registerForm.get('password')?.value,
+          watched:[],
+          favourite:[],
+          watchedLater:[],
         }
         this.userService.addUser(user).subscribe((addedUser:User)=>{
           console.log(addedUser);

@@ -8,9 +8,10 @@ import { Anime } from '../../Interfaces/Anime';
   styleUrls: ['./anime-list.component.scss'],
 })
 export class AnimeListComponent implements OnInit, DoCheck {
-  @Input() animes!: Anime[] ;
-  animeByGenre: Anime [] = [];
+  @Input() animes!: Anime[];
+  animeByGenre: Anime[] = [];
   @Input() genre: String = '';
+  @Input() accountView: boolean = false;
   columns: NumberInput = '6';
   constructor() {}
 
@@ -38,14 +39,19 @@ export class AnimeListComponent implements OnInit, DoCheck {
     }
   }
 
-  refresh(){
+  refresh() {
     this.breakPoints();
-    if (this.genre === '' || this.genre === 'All') {
+    if (!this.accountView) {
+      if (this.genre === '' || this.genre === 'All') {
+        this.animeByGenre = this.animes;
+      } else {
+        this.animeByGenre = this.animes.filter((anime: Anime) => {
+          return anime.genre?.includes(this.genre);
+        });
+      }
+    }
+    else{
       this.animeByGenre = this.animes;
-    } else {
-      this.animeByGenre = this.animes.filter((anime: Anime) => {
-        return anime.genre?.includes(this.genre);
-      });;
     }
   }
   onResize(event: any) {

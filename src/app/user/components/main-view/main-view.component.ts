@@ -11,6 +11,7 @@ export class MainViewComponent implements OnInit {
 
   genres!: String[];
   animes!: Anime[];
+  accountViews: String[] = ['Watched','Favourite','Watchlist'];
 
   constructor(private animeService: AnimeService) { }
 

@@ -1,1 +1,26 @@
-<p>account works!</p>
+<div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="24px">
+    <div fxLayout="row" fxLayoutAlign="center">
+      <mat-card class="w-100">
+        <mat-card-content>
+          <ng-container *ngIf="(!user)">
+            <div fxLayout="row" fxLayoutAlign="space-evenly">Loading tabs...</div>
+          </ng-container>
+          <mat-tab-group mat-align-tabs="center" color="primary">
+            <ng-container *ngIf="accountViews">
+            <mat-tab *ngFor="let accountView of accountViews">
+              <ng-template mat-tab-label>{{ accountView.view }}</ng-template>
+                <ng-container *ngIf="user">
+                <app-anime-list
+                    [accountView]="true"
+                  [genre]="accountView.view"
+                  [animes]="accountView.animes"
+                ></app-anime-list>
+              </ng-container>
+            </mat-tab>
+          </ng-container>
+          </mat-tab-group>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  

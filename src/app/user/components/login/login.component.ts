@@ -59,7 +59,11 @@ export class LoginComponent implements OnInit {
           if (passwordMatched) {
             alert('Login Successful!');
             this.authService.loginUser(loggedInUser);
-            this.router.navigateByUrl('/');
+            if(this.authService.redirectUrl){
+              this.router.navigateByUrl(this.authService.redirectUrl);
+            }else{
+              this.router.navigateByUrl('/');
+            }
           } else {
             alert('Incorrect password!');
           }

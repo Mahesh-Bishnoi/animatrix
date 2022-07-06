@@ -5,18 +5,22 @@
       src="../assets/goku-256.png"
       alt="App icon goku"
     />
-  <h1 class="header-title">{{ title }}</h1>
-</a>
-<nav mat-tab-nav-bar backgroundColor="primary" id="mat-tab-nav-bar">
-  <a
-    mat-tab-link
-    *ngFor="let link of navLinks"
-    routerLink="{{ '/' + link.path }}"
-    routerLinkActive
-    #rla="routerLinkActive"
-    [active]="rla.isActive"
-  >
-    {{ link.label }}
+    <h1 class="header-title">{{ title }}</h1>
   </a>
-</nav>
+  <!-- <a routerLink="/account">Account</a> -->
+  <ng-container *ngIf="isUserAuthenticated">
+    <a routerLink="/">Account</a>
+  </ng-container>
+  <nav mat-tab-nav-bar backgroundColor="primary" id="mat-tab-nav-bar">
+    <a
+      mat-tab-link
+      *ngFor="let link of navLinks"
+      routerLink="{{ '/' + link.path }}"
+      routerLinkActive
+      #rla="routerLinkActive"
+      [active]="rla.isActive"
+    >
+      {{ link.label }}
+    </a>
+  </nav>
 </mat-toolbar>
