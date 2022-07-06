@@ -22,4 +22,7 @@ export class AnimeDetailsComponent implements OnInit {
     });
   }
 
+  onAddReview(anime:Anime){
+    this.anime = anime;
+  }
 }

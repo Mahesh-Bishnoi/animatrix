@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Anime } from '../Interfaces/Anime';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -17,5 +17,15 @@ export class AnimeService {
   }
   public getAnimeByID(id:Number): Observable<Anime>{
     return this.httpClient.get<Anime>('/api/animes/'+id);
+  }
+  public addReview(anime:Anime):Observable<any>{
+    let animeId = anime.id;
+    let url = '/api/animes/' + animeId;
+    return this.httpClient.put(url,anime).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error(error);
+        return throwError(() => new Error('Error while adding anime'));
+      })
+    );;
   }
 }

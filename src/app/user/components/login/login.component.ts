@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { User } from 'src/app/shared/Interfaces/User';
+import { AuthService } from '../../../shared/services/auth.service';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -12,7 +14,7 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   hide: boolean = true;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private authService:AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
@@ -38,6 +40,7 @@ export class LoginComponent implements OnInit {
 
   public onLogin() {
     if (this.loginForm.valid) {
+      let loggedInUser:User;
       this.userService.getUsers().subscribe((users: User[]) => {
         let emailMatched: boolean = false;
         let passwordMatched: boolean = false;
@@ -48,12 +51,15 @@ export class LoginComponent implements OnInit {
             emailMatched = true;
             if (user.password === password) {
               passwordMatched = true;
+              loggedInUser = user;
             }
           }
         });
         if (emailMatched) {
           if (passwordMatched) {
             alert('Login Successful!');
+            this.authService.loginUser(loggedInUser);
+            this.router.navigateByUrl('/');
           } else {
             alert('Incorrect password!');
           }

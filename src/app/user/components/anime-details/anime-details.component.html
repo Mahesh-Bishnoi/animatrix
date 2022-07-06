@@ -1,5 +1,5 @@
 <ng-container *ngIf="(anime)">
-<div fxLayout="column" fxLayoutAlign="center center" class="h-100" fxlayoutgap="24px">
+<div fxLayout="row" fxLayoutAlign="space-evenly center" class="h-100" fxlayoutgap="24px">
 <mat-card class="example-card" fxLayout="column" fxLayoutAlign="center center">
   <mat-card-header>
     <mat-card-title>{{ anime.name }}</mat-card-title>
@@ -21,5 +21,11 @@
     <button mat-raised-button color="primary">Watch</button>
   </mat-card-actions>
 </mat-card>
+<div fxLayout="column" fxLayoutAlign="space-evenly center" fxlayoutgap="24px">
+<app-add-review [anime]="anime" (animeUpdate)="onAddReview($event)"></app-add-review>
+<ng-container *ngIf="(anime.reviews && anime.reviews.length>0)">
+<app-reviews [anime]="anime"></app-reviews>
+</ng-container>
+</div>
 </div>
 </ng-container>

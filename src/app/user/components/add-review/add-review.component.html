@@ -1,1 +1,28 @@
-<p>add-review works!</p>
+<div fxLayout="column" fxLayoutAlign="center center" class="review-form">
+    <mat-card class="review-form-card">
+      <mat-card-header fxLayoutAlign="center" fxLayout="row">
+        <mat-card-title>Add Review</mat-card-title>
+      </mat-card-header>
+      <form [formGroup]="reviewForm" (ngSubmit)="onAddReview()">
+        <mat-form-field
+          appearance="fill"
+          color="primary"
+          class="review-form-field"
+        >
+          <mat-label>Review</mat-label>
+          <textarea matInput formControlName="review" required ></textarea>
+          <mat-error *ngIf="review.invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+        
+        <button
+          class="review-form-button"
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="!reviewForm.valid"
+        >
+          Add
+        </button>
+      </form>
+    </mat-card>
+  </div>

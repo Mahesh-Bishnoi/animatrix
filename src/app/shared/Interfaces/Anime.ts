@@ -1,3 +1,5 @@
+import { Review } from "./Review";
+
 export interface Anime {
   id: Number;
   name: String;
@@ -7,4 +9,5 @@ export interface Anime {
   genre?: String[];
   language?: String;
   image?: String;
+  reviews?: Review[];
 }

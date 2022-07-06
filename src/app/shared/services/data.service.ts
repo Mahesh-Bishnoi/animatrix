@@ -20,6 +20,7 @@ export class DataService implements InMemoryDbService {
         image: 'assets/goku-256.png',
         imdbRating: 5,
         language: 'English',
+        reviews: [],
       },
       {
         id: 2,
@@ -30,6 +31,7 @@ export class DataService implements InMemoryDbService {
         image: 'assets/goku-256.png',
         imdbRating: 7,
         language: 'English',
+        reviews: [],
       },
       {
         id: 3,
@@ -40,6 +42,7 @@ export class DataService implements InMemoryDbService {
         image: 'assets/goku-256.png',
         imdbRating: 8,
         language: 'English',
+        reviews: [],
       },
       {
         id: 4,
@@ -50,6 +53,7 @@ export class DataService implements InMemoryDbService {
         image: 'assets/goku-256.png',
         imdbRating: 9,
         language: 'English',
+        reviews: [],
       },
     ];
 

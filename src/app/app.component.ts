@@ -9,7 +9,6 @@ export class AppComponent {
   title: String = 'Animatrix';
   navLinks = [
     { path: 'animes', label: 'Animes' },
-    { path: 'login', label: 'Login' },
     { path: 'admin', label: 'Admin' },
   ];
 }

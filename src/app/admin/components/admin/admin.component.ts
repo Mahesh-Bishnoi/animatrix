@@ -62,6 +62,7 @@ export class AdminComponent implements OnInit {
       language: this.animeForm.value.language,
       imdbRating: this.animeForm.value.imdbRating,
       image: image,
+      reviews: [],
     };
     this.adminService.addAnime(anime).subscribe((anime: Anime) => {
       alert('Added successfully!');

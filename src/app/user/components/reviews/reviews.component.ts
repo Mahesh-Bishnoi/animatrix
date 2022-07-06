@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Anime } from 'src/app/shared/Interfaces/Anime';
+import { Review } from 'src/app/shared/Interfaces/Review';
 
 @Component({
   selector: 'app-reviews',
@@ -7,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReviewsComponent implements OnInit {
 
+  @Input()anime!:Anime;
   constructor() { }
 
   ngOnInit(): void {
