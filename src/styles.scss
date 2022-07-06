@@ -1,7 +1,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use "@angular/material" as mat;
-@use "./palette" as plt;
+
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -12,9 +12,42 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$animatrix-primary: mat.define-palette(plt.$animatrix-pallete-blue);
+$animatrix-pallete-blue: (
+  50: #e3effa,
+  100: #bad6f2,
+  200: #8cbbe9,
+  300: #5e9fe0,
+  400: #3c8bd9,
+  500: #1976d2,
+  600: #166ecd,
+  700: #1263c7,
+  800: #0e59c1,
+  900: #0846b6,
+  A100: #e0eaff,
+  A200: #adc6ff,
+  A400: #7aa3ff,
+  A700: #6191ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$animatrix-primary: mat.define-palette($animatrix-pallete-blue);
 $animatrix-accent: mat.define-palette(
-  plt.$animatrix-pallete-blue,
+  $animatrix-pallete-blue,
   A200,
   A100,
   A400
